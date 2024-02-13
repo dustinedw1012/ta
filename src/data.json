@@ -1,0 +1,40 @@
+{
+    "animals": [
+      {
+        "name": "OWA JAWA",
+        "famili": "Hylobatidae",
+        "genus": "Hylobates",
+        "sisa_populasi": "1000 - 2000",
+        "deskripsi": "Owa jawa tidak memiliki ekor, dan tangannya relatif panjang diandingkan dengan besar tubuhnya. Tangan yang panjang ini diperlukannya untuk berayun dan berpindah di antara dahan-dahan dan ranting di tajuk pohon yang tinggi, tempatnya beraktivitas sehari-hari. Warna tubuhnya keabu-abuan, dengan sisi atas kepala lebih gelap dan wajah kehitaman."
+      },
+      {
+        "name": "SURILI",
+        "famili": "Cercopithecidae",
+        "genus": "Presbytis",
+        "sisa_populasi": "1400-1500",
+        "deskripsi": "Surili adalah grup monyet Dunia Lama dan membuat genus Presbytis. Mereka hidup di bagian selatan semenanjung Malaya, di Sumatra, Borneo, Jawa, dan pulau kecil di sekitarnya. Umumnya warna tubuh Surili dewasa mulai dari kepala sampai bagian punggung hitam atau coklat dan keabuan, sedangkan warna rambut jambul dan kepala berwarna hitam. Rambut yang tumbuh di bawah dagu, dada dan perut, bagian dalam lengan kaki dan ekor, berwarna putih. Warna kulit muka dan telinga hitam pekat agak kemerahan."
+      },
+      {
+        "name": "MACAN TUTUL JAWA",
+        "famili": "Felidae",
+        "genus": "Panthera",
+        "sisa_populasi": "188-571",
+        "deskripsi": "Dibandingkan dengan subspesies macan tutul lainnya, macan tutul jawa berukuran paling kecil. Subspesies ini pada umumnya memiliki tutul seperti warna sayap kumbang yang hitam mengilap, dengan bintik-bintik gelap berpola mirip bunga yang hanya terlihat di bawah cahaya terang. Hewan ini memiliki dua ragam warna kulit yaitu berwarna terang (jingga) dan hitam (Melanisme) atau lazim disebut macan kumbang."
+      },
+      {
+        "name": "KUKANG JAWA",
+        "famili": "Hylobatidae",
+        "genus": "Hylobates",
+        "sisa_populasi": "1000-2000",
+        "deskripsi": "Kukang jawa (Nycticebus javanicus) adalah primata Strepsirrhini dan spesies kukang asli yang menyebar di bagian barat dan tengah Pulau Jawa, Indonesia. Meskipun awalnya dideskripsikan sebagai spesies yang tersendiri, selama bertahun-tahun kukang jawa dianggap sebagai anak-jenis dari kukang sunda (N. coucang), sampai kemudian dilakukan kajian ulang morfologi dan genetika terhadap takson ini pada tahun 2000-an, yang mengakibatkan peningkatan statusnya sebagai spesies penuh."
+      },
+      {
+        "name": "LUTUNG JAWA",
+        "famili": "Hylobatidae",
+        "genus": "Hylobates",
+        "sisa_populasi": "1000-2000",
+        "deskripsi": "Lutung Jawa merupakan salah satu satwa asli Indonesia yang dapat ditemukan di Pulau Jawa, Bali, dan Lombok. Primata ini memiliki berat 7-9 kg dengan panjang tubuh mencapai 65 cm. Lutung Jawa dapat hidup hingga umur 20 tahun. Rambut Lutung Jawa muda berwarna oranye kejinggaan, dan akan semakin menggelap menjadi hitam seiring bertambahnya usia."
+      },
+    ]
+  }
+  
