@@ -6,6 +6,10 @@
       <title>SATO JABAR</title>
       <script src="https://cdn.tailwindcss.com"></script>
    </head>
+   <script>
+      // Data yang dikirim dari server
+      var animalsData = <%- JSON.stringify(animals) %>;
+    </script>
    <body>
       <!-- Panel Navigasi -->
       <nav class="bg-[#556B2F] p-4 text-white fixed w-full top-0 z-50">
@@ -110,10 +114,14 @@
 
 <script>
     function showPopup(element) {
+      console.log(animalsData);
         // Mengambil teks dari elemen h3
         var titleText = element.textContent || element.innerText;
         console.log(titleText);
-        // Mengambil teks dari elemen p yang merupakan saudara dari h3
+
+        var matchedAnimal = animalsData.find(animal => animal.name === titleText);
+      if (matchedAnimal) {
+                 // Mengambil teks dari elemen p yang merupakan saudara dari h3
         var detailText = element.nextElementSibling.textContent || element.nextElementSibling.innerText;
         console.log(detailText);
         // Mengambil sumber gambar dari img dalam parent yang sama
@@ -122,6 +130,21 @@
         console.log(imgSrc);
         // Menyiapkan konten popup dengan teks dan gambar
         var popupContent = "<img src='" + imgSrc + "' alt='" + imgAlt + "' class='w-full h-32 sm:h-48 object-cover'><h3 class='text-lg font-bold'>" + titleText + "</h3><p class='text-sm'>" + detailText + "</p>";
+
+          // Menyiapkan konten popup dengan teks dan gambar
+          var popupContent = "<img src='" + imgSrc + "' alt='" + imgAlt + "' class='w-full h-32 sm:h-48 object-cover'><h3 class='text-lg font-bold'>" + titleText + "</h3><p class='text-sm'>" + detailText + "</p>" + "</h3><p class='text-sm'>" + matchedAnimal.deskripsi + "</p>";
+
+          // Menampilkan teks dan gambar di dalam popup
+          document.getElementById('popup-text').innerHTML = popupContent;
+
+          // Menampilkan popup
+          document.getElementById('popup').style.display = 'block';
+      } else {
+          // Tampilkan pesan error atau isi default jika tidak ada kecocokan
+          document.getElementById('popup-text').innerHTML = "<p>Informasi tidak tersedia.</p>";
+          document.getElementById('popup').style.display = 'block';
+      }
+
 
         // Menampilkan teks dan gambar di dalam popup
         document.getElementById('popup-text').innerHTML = popupContent;

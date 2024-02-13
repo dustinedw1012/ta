@@ -1,7 +1,7 @@
 // index.js
 const express = require('express');
 const path = require('path');
-
+const fs = require('fs');
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -12,7 +12,20 @@ app.use(express.static(path.join(__dirname, 'src')));
 
 // Route ke index.html
 app.get('/', (req, res) => {
-  res.render(path.join(__dirname, '/src/index.ejs'));
+   // Membaca file JSON
+   fs.readFile('src/data.json', 'utf8', (err, data) => {
+    if (err) {
+      console.error("Error reading the JSON file", err);
+      res.status(500).send("Error reading the JSON file");
+      return;
+    }
+    
+    // Parse data JSON
+    const animalsData = JSON.parse(data);
+
+    // Mengirim data ke EJS
+    res.render('index.ejs', { animals: animalsData.animals });
+  })
 });
 
 
