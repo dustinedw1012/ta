@@ -37,20 +37,22 @@
       <!-- End of Panel Navigasi-->
 
          <!-- Halaman 1 -->
-         <div class="relative overflow-hidden rounded-t-lg">
+         <div class="relative overflow-hidden rounded-t-lg h-screen w-full">
             <!-- relative container for absolute positioned children -->
             <!-- Background image -->
             <img src="Background1.png" alt="Deskripsi Gambar" class="absolute inset-0 h-full w-full object-cover">
             <!-- Foreground image -->
-            <img src="SATOJABAR.png" alt="Deskripsi Gambar" class="w-auto h-auto scale-50">
-            <!-- Text in the center -->
-            <h1 class="absolute top-0 text-center text-white text-4xl md:text-6xl font-bold">Sistem Informasi Terpadu Konservasi Hewan Provinsi Jawa Barat</h1>
+            <div class="w-auto h-auto mt-[100px] flex justify-center items-center flex-col">
+                  <img src="SATOJABAR.png" alt="Deskripsi Gambar" class="scale-50 mt-20" >
+                  <!-- Text in the center -->
+                  <h1 class="text-white text-2xl md:text-2xl font-semibold z-10">Sistem Informasi Terpadu Konservasi Hewan Provinsi Jawa Barat</h1>
+            </div>
          </div>   
 
 
 <!-- Halaman 2 -->
 
-      <div class="relative mt-80">
+      <div class="relative overflow-hidden rounded-t-lg h-screen w-full">
          <img src="Page2.png" alt="" class="w-full h-auto absolute">
          <div class="flex justify-center">
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4 p-4 absolute">
@@ -113,7 +115,7 @@
     </div>
 </div>
 
-<div class="relative mt-96">
+<div class="relative overflow-hidden rounded-t-lg h-screen w-full">
    <img src="Page3.png" alt="" class="w-full h-auto absolute">
    <div class="flex justify-center items-center h-screen">
       <h1 class="text-white text-4xl md:text-6xl font-bold">PERMASALAHAN TERKAIT KONSERVASI</h1>
@@ -151,11 +153,6 @@
    </div>
 </div>
 
-   
-
-
- 
- 
 
 <script>
     function showPopup(element) {
