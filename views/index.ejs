@@ -6,7 +6,9 @@
       <title>SATO JABAR</title>
       <script src="https://cdn.tailwindcss.com"></script>
 
+      <link rel="stylesheet" href="style.css">
 
+                                                                                               
       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
       integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
       crossorigin=""/>
@@ -37,13 +39,13 @@
          <div class="flex justify-center">
             <ul class="flex space-x-4">
                <li class="hover:bg-[#475B26] py-2 px-4 rounded text-center">
-                  <a href="#" class="block">INFORMASI SATWA LANGKA</a>
+                  <a href="#Page2" class="block">INFORMASI SATWA LANGKA</a>
                </li>
                <li class="hover:bg-[#475B26] py-2 px-4 rounded text-center">
-                  <a href="#" class="block">PERMASALAHAN KONSERVASI</a>
+                  <a href="#Page3" class="block">PERMASALAHAN KONSERVASI</a>
                </li>
                <li class="hover:bg-[#475B26] py-2 px-4 rounded text-center">
-                  <a href="#" class="block">PETA DAN STATISTIK</a>
+                  <a href="#Page4" class="block">PETA DAN STATISTIK</a>
                </li>
             </ul>
          </div>
@@ -59,14 +61,14 @@
             <div class="w-auto h-auto mt-[100px] flex justify-center items-center flex-col">
                   <img src="SATOJABAR.png" alt="Deskripsi Gambar" class="scale-50 mt-20" >
                   <!-- Text in the center -->
-                  <h1 class="text-white text-2xl md:text-2xl font-semibold z-10">Sistem Informasi Terpadu Konservasi Hewan Provinsi Jawa Barat</h1>
+                  <h1 class="text-white text-2xl md:text-2xl font-semibold z-0 mb-48">Sistem Informasi Terpadu Konservasi Hewan Provinsi Jawa Barat</h1>
             </div>
          </div>   
 
 
 <!-- Halaman 2 -->
 
-      <div class="relative overflow-hidden rounded-t-lg h-screen w-full">
+      <div class="relative overflow-hidden rounded-t-lg h-screen w-full" id="Page2">
          <img src="Page2.png" alt="" class="w-full h-auto absolute z-1">
          <div class = "flex justify-center items-center">
          <h1 class="text-white text-4xl font-bold absolute inset-x-960 top-4 h-16">SATWA PRIORITAS KONSERVASI</h1>
@@ -135,7 +137,7 @@
 
 
 <!-- Halaman 3  -->
-<div class="relative overflow-hidden rounded-t-lg h-screen w-full">
+<div class="relative overflow-hidden rounded-t-lg h-screen w-full" id="Page3">
    <img src="Page3.png" alt="" class="w-full h-auto absolute z-1">
 
    <div class = "flex justify-center items-center">
@@ -181,17 +183,87 @@
 
 
 <!-- Halaman 4  -->
-<div class="w-full h-full flex flex-row">
-   <!-- text -->
-   <div class ="rounded-lg overflow-hidden shadow-lg w-1/4">
-      <p class="text-sm font-bold text-4xl">PETA KESESUAIAN MULTI HABITAT FAUNA ENDEMIK JAWA BARAT</p>
+<div class="relative overflow-hidden rounded-t-lg h-screen w-full" id="Page4">
+   <div class="bg-local h-screen" style="background-image: url('./Page3.png')">
+      
+      <div class = "flex flex-col justify-center items-center p-20 ">
+         <h1 class="text-white text-6xl font-bold mt-20">PETA DAN STATISTIK</h1>
+         <div class="flex flex-row p-3 mt-40 item-center justify-center bg-white rounded-lg overflow-hidden shadow-lg w-3/4 ">
+            <!-- gambar -->
+            <div class="w-2/3">
+            <img src="PetaJabar.png" alt="Peta JAwa Barat" class="w-ful h-full">
+
+            </div>
+            <!-- text -->
+            <div class="w-4/5 text-2xl mt-24 text-black text-justify">
+               <p>Peta berikut menunjukkan area yang menjadi prioritas konservasi, baik untuk pembuatan konservasi baru maupun perluasan area konservasi yang ada. Penentuan prioritas didasarkan pada kesesuaian area konservasi dengan karakteristik kehidupan satwa, kemampuan area dalam memberikan jasa ekosistem, terhindarnya area dari ancaman bencana alam dan gangguan aktivitas penduduk.</p>
+
+               <button class="bg-stone-600 hover:bg-stone-400 text-white font-bold py-2 px-4 rounded-full mt-10 ">
+                  LIHAT SELENGKAPNYA
+                </button>
+
+            </div>
+         </div>
+      </div>
+
+
+
+
+
+      
+</div>
+
+
+
+
+
+
+<!-- Halaman 5  -->
+<div class="container">
+   <div class="row">
+       <nav class="logo">
+           <h1>
+               <img src="/mainpage/img/BBKSDA_logo.svg" alt="">
+           </h1>
+           <h1>
+               <img src="/mainpage/img/ITB_logo.svg" alt="">
+           </h1>
+           <h1>
+               <a href="/mainpage/">
+                   <img src="/mainpage/img/SATOJABAR_logo.svg" alt="">
+               </a>
+           </h1>
+       </nav>
+       <nav class="navbar">
+           <a href="">Informasi Satwa Langka</a>
+           <a href="">Permasalahan Konservasi</a>
+           <a href="/petastatistik/index.html">Peta dan Statistik</a>
+       </nav>
+       <div class="content">
+           <h1>PETA STATISTIK</h1>
+           <div class="kotak">
+               <nav class="teks">
+                   <img src="/petastatistik/img/GambarPetaStat.svg" alt="">
+                   <p>Peta berikut menunjukkan area yang menjadi prioritas konservasi, baik untuk pembuatan konservasi baru maupun perluasan area konservasi yang ada. Penentuan prioritas didasarkan pada kesesuaian area konservasi dengan karakteristik kehidupan satwa, kemampuan area dalam memberikan jasa ekosistem, terhindarnya area dari ancaman bencana alam dan gangguan aktivitas penduduk.</p>
+                   <a href="/peta/index.html">Lihat Selengkapnya</a>
+               </nav>
+           </div>
+       </div>
    </div>
+</div>
+
+<!-- Halaman Baru  -->
+<!-- <div class="w-full h-full flex flex-row"> -->
+   <!-- text -->
+   <!-- <div class ="rounded-lg overflow-hidden shadow-lg w-1/4"> -->
+      <!-- <p class="text-sm font-bold text-4xl">PETA KESESUAIAN MULTI HABITAT FAUNA ENDEMIK JAWA BARAT</p>
+   </div> -->
    <!-- map -->
-   <div class="w-3/4 sticky">
+   <!-- <div class="w-3/4 sticky">
       <div id="map"></div>
    </div>
 
-</div>
+</div> -->
 
         <!-- Column Box Map -->
       <!-- <div>

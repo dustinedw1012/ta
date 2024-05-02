@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background-image:url("/petastatistik/img/BACKGROUNDPETASTAT.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+}
+
+.row{
+    display: flex;
+    justify-content:start;
+    align-items:center;
+    margin: 0 auto;
+    background-color: #475b26
+}
+.logo{
+    display: flex;
+    padding: 20px 40px 1px 32px;;
+}
+.navbar{
+    width: 100%;
+    display: flex;
+    justify-content:space-around;
+    align-items:center;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+.navbar a{
+    font-family: 'Plus Jakarta Sans';
+    color: #FFFF;
+    text-align: center ;
+    font-weight: 700;
+    line-height: 30px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.content h1{
+
+    position: absolute;
+    align-items: center;
+    width: 1047px;
+    height: 78px;
+    left: 525px;
+    top: 124px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 64px;
+    line-height: 96px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+
+    color: #F0EAD2;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.69);
+}
+.kotak{
+    position: absolute;
+    background: #F0EAD2;
+    width: 1180px;
+    height: 409px;
+    left: 199px;
+    top: 235px;
+}
+
+.teks {
+    display: flex;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: justify;
+    color: #6C584C;
+}
+
+.teks img{
+    max-width: 446px;
+    max-height: 402px;
+    padding: 28px 7px 19px 22px;
+}
+.teks p{
+    padding: 83px 27px 6px 24px;
+}
+.teks a{
+    position: absolute;
+    width: 269px;
+    height: 37px;
+    left: 469px;
+    top: 244px;
+    background: #6C584C;
+    border-radius: 10px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: #F0EAD2;
+    text-align: center;
+    padding: 7px 20px 20px 20px;
+}
