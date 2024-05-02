@@ -5,6 +5,20 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>SATO JABAR</title>
       <script src="https://cdn.tailwindcss.com"></script>
+
+
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""/>
+
+      <style>
+         #map {
+            width: 100%;
+            height: 100vh;
+         }
+      </style>
+
+
    </head>
    <script>
       // Data yang dikirim dari server
@@ -53,9 +67,13 @@
 <!-- Halaman 2 -->
 
       <div class="relative overflow-hidden rounded-t-lg h-screen w-full">
-         <img src="Page2.png" alt="" class="w-full h-auto absolute">
+         <img src="Page2.png" alt="" class="w-full h-auto absolute z-1">
+         <div class = "flex justify-center items-center">
+         <h1 class="text-white text-4xl font-bold absolute inset-x-960 top-4 h-16">SATWA PRIORITAS KONSERVASI</h1>
+         <h3 class="text-white text-l text-center absolute inset-x-960 top-16 h-16 w-1/2">KERJASAMA KELOMPOK KEAHLIAN SAINS DAN TEKNOLOGI INFORMASI GEOGRAFIS PROGRAM STUDI TEKNIK GEODESI DAN GEOMATIKA INSTITUT TEKNOLOGI BANDUNG DENGAN BALAI BESAR KONSERVASI SUMBER DAYA ALAM PROVINSI JAWA BARAT</h3>
+         </div>
          <div class="flex justify-center">
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 p-4 absolute">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 p-4 top-16 absolute">
                <!-- Column Box 1 -->
                <div class="bg-white rounded-lg overflow-hidden shadow-lg mt-20">
                   <img src="Owa.jpg" alt="Owa Jawa" class="w-full h-32 sm:h-48 object-cover">
@@ -84,7 +102,7 @@
          </div>
 
          <div class="flex justify-center mt-80">
-            <div class="grid grid-cols-2 md:grid-cols-2 gap-4 p-4 absolute">
+            <div class="grid grid-cols-2 md:grid-cols-2 gap-4 p-4 absolute top-96">
                <!-- Column Box 4 -->
                <div class="bg-white rounded-lg overflow-hidden shadow-lg mt-20" >
                   <img src="Kukang.jpg" alt="Owa Jawa" class="w-full h-32 sm:h-48 object-cover">
@@ -115,11 +133,17 @@
     </div>
 </div>
 
+
+<!-- Halaman 3  -->
 <div class="relative overflow-hidden rounded-t-lg h-screen w-full">
-   <img src="Page3.png" alt="" class="w-full h-auto absolute">
-   <div class="flex justify-center items-center h-screen">
-      <h1 class="text-white text-4xl md:text-6xl font-bold">PERMASALAHAN TERKAIT KONSERVASI</h1>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 p-4 absolute">
+   <img src="Page3.png" alt="" class="w-full h-auto absolute z-1">
+
+   <div class = "flex justify-center items-center">
+      <h1 class="text-white text-4xl font-bold absolute inset-x-960 top-4 h-16">PERMASALAHAN TERKAIT KONSERVASI</h1>
+   </div>
+
+
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 p-4 absolute left-1/4 top-20  ">
          <!-- Column Box 1 -->
          <div class="bg-white rounded-lg overflow-hidden shadow-lg mt-20 ">
             <img src="Owa.jpg" alt="Owa Jawa" class="w-full h-32 sm:h-48 object-cover">
@@ -134,7 +158,9 @@
                <p class="text-center text-sm font-semibold">Bencana alam mengancam kehidupan satwa</p>
             </div>
          </div>
+
          <br>
+
          <!-- Column Box 3 -->
          <div class="bg-white rounded-lg overflow-hidden shadow-lg mt-20">
             <img src="Owa.jpg" alt="Owa Jawa" class="w-full h-32 sm:h-48 object-cover">
@@ -152,6 +178,31 @@
       </div>
    </div>
 </div>
+
+
+<!-- Halaman 4  -->
+<div class="w-full h-full flex flex-row">
+   <!-- text -->
+   <div class ="rounded-lg overflow-hidden shadow-lg w-1/4">
+      <p class="text-sm font-bold text-4xl">PETA KESESUAIAN MULTI HABITAT FAUNA ENDEMIK JAWA BARAT</p>
+   </div>
+   <!-- map -->
+   <div class="w-3/4 sticky">
+      <div id="map"></div>
+   </div>
+
+</div>
+
+        <!-- Column Box Map -->
+      <!-- <div>
+        <div class="rounded-lg overflow-hidden shadow-lg sticky right-0 mt-20 h-3/4 w-3/4" >
+         <div class="p-4">
+            <p class="text-center text-sm font-bold text-4xl">PETA KESESUAIAN MULTI HABITAT FAUNA ENDEMIK JAWA BARAT</p>
+         </div>
+
+      </div>
+   </div> -->
+
 
 
 <script>
@@ -217,4 +268,20 @@
     }
 </script>
 
+
+
 </html>
+
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+crossorigin=""></script>
+
+<script>
+   var map = L.map('map').setView([51.505, -0.09], 13);
+
+   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+   }).addTo(map);
+</script>
