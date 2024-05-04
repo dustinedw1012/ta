@@ -28,7 +28,13 @@ app.get('/', (req, res) => {
   })
 });
 
+// Route ke index.html
+app.get('/Map', (req, res) => {
 
+   // Mengirim data ke EJS
+   res.render('Map.ejs');
+
+});
 
 app.listen(PORT, () => {
   console.log(`Server berjalan pada http://localhost:${PORT}`);
