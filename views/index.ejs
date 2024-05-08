@@ -138,7 +138,7 @@
 
 <!-- Halaman 3  -->
 <div class="relative overflow-hidden rounded-t-lg h-screen w-full" id="Page3">
-   <img src="Page3.png" alt="" class="w-full h-auto absolute z-1">
+   <img src="Page3.png" alt="" class="w-full h-auto relative z-0">
 
    <div class = "flex justify-center items-center">
       <h1 class="text-white text-4xl font-bold absolute inset-x-960 top-4 h-16">PERMASALAHAN TERKAIT KONSERVASI</h1>
@@ -295,7 +295,7 @@
         console.log(imgSrc);
    
         var popupContent = `
-            <div class="p-4">
+            <div class="p-4 z-50">
                <img src="${imgSrc}" alt="${imgAlt}" class="w-full h-32 sm:h-48 object-cover">
                <div class="mt-4">
                   <h3 class="text-lg font-bold uppercase">${titleText}</h3>

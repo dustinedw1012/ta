@@ -50,25 +50,34 @@
       <!-- End of Panel Navigasi-->
 
  
-<!-- Column Box Map -->
-<div>
-   <div class="rounded-lg overflow-hidden shadow-lg sticky justify-items-center	 mt-20 h-3/4 w-3/4">
-      <div class="p-4">
-         <p class="text-center text-sm font-bold text-4xl">PETA KESESUAIAN MULTI HABITAT FAUNA ENDEMIK JAWA BARAT</p>
-         <!-- Halaman Baru -->
-            <div class=" w-full h-full flex flex-row">
-               <!-- text -->
-               <div class="rounded-lg overflow-hidden shadow-lg w-1/4">
-                  <p class="text-sm font-bold text-4xl">PETA KESESUAIAN MULTI HABITAT FAUNA ENDEMIK JAWA BARAT</p>
-               </div>
-               <!-- map -->
-               <div class="w-3/4 sticky">
-                  <div id="map"></div>
-               </div>
-            </div>
-      </div>
+<!-- Outer Container with Background -->
+<div class="relative flex flex-col items-center w-full p-4 mt-16">
+   <!-- Background Image -->
+   <div class="absolute inset-0 z-0 w-full h-full flex justify-center items-center ">
+     <img src="Background1.png" alt="Peta Jawa Barat" class="w-full h-full object-cover opacity-40">
    </div>
-</div>
+ 
+   <!-- Foreground Container -->
+   <div class="relative z-10 rounded-lg shadow-lg flex flex-col items-center p-4 w-full max-w-full bg-white/80 opacity">
+     <p class="text-center text-2xl font-bold mb-4">PETA KESESUAIAN MULTI HABITAT FAUNA ENDEMIK JAWA BARAT</p>
+ 
+     <!-- Content Container -->
+     <div class="flex flex-row w-full h-[750px]">
+       <!-- Sidebar Text -->
+       <div class="flex flex-col justify-center items-center p-4 w-1/6 bg-white rounded-lg shadow-md mr-2">
+         <p class="text-center text-base font-bold">PETA KESESUAIAN MULTI HABITAT FAUNA ENDEMIK JAWA BARAT</p>
+       </div>
+ 
+       <!-- Map Section -->
+       <div class="w-5/6 rounded-lg overflow-hidden shadow-md">
+         <div id="map" class="w-full h-full"></div>
+       </div>
+     </div>
+   </div>
+ </div>
+ 
+ 
+ 
 
 
 
