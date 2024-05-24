@@ -1,234 +1,235 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>SATO JABAR</title>
-      <script src="https://cdn.tailwindcss.com"></script>
-
-      <link rel="stylesheet" href="style.css">
-
-                                                                                               
-      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-      crossorigin=""/>
-
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+      <link href="/src/output.css" rel="stylesheet">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"  rel="stylesheet" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"  rel="stylesheet" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+      <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+      <script src="https://unpkg.com/georaster"></script>
+      <script src="https://unpkg.com/georaster-layer-for-leaflet"></script>
+      <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+      <script src="/src/script.js"></script>
       <style>
-         #map {
-            width: 100%;
-            height: 100vh;
+         .content-wrapper {
+         margin-top: 60px;
+         padding: 60px;
          }
+         .content-wrapper-2 {
+         padding-right: 60px;
+         padding-left: 60px;
+         }
+         .component-wrapper {
+         margin-bottom: 20px; /* Atur jarak antar komponen */
+         }
+         .component-wrapper-2 {
+         margin-top: 60px;
+         margin-bottom: 60px; /* Atur jarak antar komponen */
+         }
+         .leaflet-container {
+  background: #ffffff;
+}
       </style>
-
-
    </head>
+   <body class="bg-white dark:gray-900">
+      <!-- Navbar -->
+      <!-- Navbar -->
+      <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+           <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+           <img src="ITB.png" class="h-8" alt="ITB Logo">
+           <img src="KLHK.png" class="h-8" alt="KLHK Logo">
+           <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Satojabar</span>
+           </a>
+           <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+              <span class="sr-only">Open main menu</span>
+              <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+              </svg>
+           </button>
+           <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+              <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                 <li>
+                     <a href="/" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-emerald-700 md:p-0 dark:text-white md:dark:hover:text-emerald-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Beranda</a>
+                 </li>
+                 <li>
+                    <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-emerald-700 md:p-0 dark:text-white md:dark:hover:text-emerald-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Tentang</a>
+                 </li>
+                 <li>
+                    <a href="/map" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-emerald-700 md:p-0 dark:text-white md:dark:hover:text-emerald-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Peta</a>
+                 </li>
+              </ul>
+           </div>
+        </div>
+     </nav>
+     
+      <div class="content-wrapper">
 
-   <body>
-      <!-- Panel Navigasi -->
-      <nav class="bg-[#556B2F] p-4 text-white fixed w-full top-0 z-50">
-         <div class="flex justify-between">
-            <div class="flex space-x-2">
-              <!-- Add your images here with appropriate Tailwind CSS classes -->
-              <img src="ITB.png" alt="Logo 1" class="h-10 w-10">
-              <img src="KLHK.png" alt="Logo 2" class="h-10 w-10">
-              <img src="SATOJABAR.png" alt="Logo 3" class="h-15 w-20">
+        <div class="component-wrapper">
+            <div class="text-center">
+               <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Peta dan Statistik</h1>
+               <p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">Peta berikut menunjukkan area yang menjadi prioritas konservasi, baik untuk pembuatan konservasi baru maupun perluasan area konservasi yang ada. Penentuan prioritas didasarkan pada kesesuaian area konservasi dengan karakteristik kehidupan satwa, kemampuan area dalam memberikan jasa ekosistem, terhindarnya area dari ancaman bencana alam dan gangguan aktivitas penduduk.</p>
             </div>
-         <div class="flex justify-center">
-            <ul class="flex space-x-4">
-               <li class="hover:bg-[#475B26] py-2 px-4 rounded text-center">
-                  <a href="#Page2" class="block">INFORMASI SATWA LANGKA</a>
-               </li>
-               <li class="hover:bg-[#475B26] py-2 px-4 rounded text-center">
-                  <a href="#Page3" class="block">PERMASALAHAN KONSERVASI</a>
-               </li>
-               <li class="hover:bg-[#475B26] py-2 px-4 rounded text-center">
-                  <a href="#Page4" class="block">PETA DAN STATISTIK</a>
-               </li>
-            </ul>
+          </div>
+
+          <div class="component-wrapper">
+
+
+            <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
+                <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
+                    <li class="me-2" role="presentation">
+                        <button class="inline-block p-4 border-b-2 rounded-t-lg" id="itensitas-kekeringan" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Intensitas Kekeringan</button>
+                    </li>
+                    <li class="me-2" role="presentation">
+                        <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="ekosistem-karbon" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Jasa Ekosistem Karbon</button>
+                    </li>
+                    <li class="me-2" role="presentation">
+                        <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="habitat" data-tabs-target="#settings" type="button" role="tab" aria-controls="settings" aria-selected="false">Kesesuaian Habitat</button>
+                    </li>
+                    <li role="presentation">
+                        <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="antropologis" data-tabs-target="#contacts" type="button" role="tab" aria-controls="contacts" aria-selected="false">Tekanan Antropologis</button>
+                    </li>
+                </ul>
+            </div>
+            <div id="default-tab-content">
+                <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Profile tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+                </div>
+                <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+                    <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Dashboard tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+                </div>
+                <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+                    <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Settings tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+                </div>
+                <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="contacts" role="tabpanel" aria-labelledby="contacts-tab">
+                    <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Contacts tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+                </div>
+            </div>
+            
+          </div>
+     
+         <div class="component-wrapper">
+            <div class="w-full h-60">
+               <div id="map" class="w-full h-full"></div>
+            </div>
          </div>
-      </nav>
-      <!-- End of Panel Navigasi-->
 
- 
-<!-- Outer Container with Background -->
-<div class="relative flex flex-col items-center w-full p-4 mt-16">
-   <!-- Background Image -->
-   <div class="absolute inset-0 z-0 w-full h-full flex justify-center items-center ">
-     <img src="Background1.png" alt="Peta Jawa Barat" class="w-full h-full object-cover opacity-40">
-   </div>
- 
-   <!-- Foreground Container -->
-   <div class="relative z-10 rounded-lg shadow-lg flex flex-col items-center p-4 w-full max-w-full bg-white/80 opacity">
-     <p class="text-center text-2xl font-bold mb-4">PETA KESESUAIAN MULTI HABITAT FAUNA ENDEMIK JAWA BARAT</p>
- 
-     <!-- Content Container -->
-     <div class="flex flex-row w-full h-[750px]">
-       <!-- Sidebar Text -->
-       <div class="flex flex-col justify-center items-center p-4 w-1/6 bg-white rounded-lg shadow-md mr-2">
-         <p class="text-center text-base font-bold">PETA KESESUAIAN MULTI HABITAT FAUNA ENDEMIK JAWA BARAT</p>
-       </div>
- 
-       <!-- Map Section -->
-       <div class="w-5/6 rounded-lg overflow-hidden shadow-md">
-         <div id="map" class="w-full h-full"></div>
-       </div>
-     </div>
-   </div>
- </div>
- 
- 
- 
+         
+      </div>
+      <footer class="footer footer-center p-10 bg-white text-base-content rounded">
+        <nav>
+          <div class="grid grid-flow-col gap-4">
+            <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg></a>
+            <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg></a>
+            <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg></a>
+          </div>
+        </nav> 
+        <aside>
+          <p>Copyright © 2024 - satojabar.com</p>
+        </aside>
+      </footer>
+   </body>
+   <script>
+var map = L.map('map').setView([-6.87, 108], 13);
 
-
-
-<script>
-    function showPopup(element) {
-      console.log(animalsData);
-        // Mengambil teks dari elemen h3
-        var titleText = element.textContent || element.innerText;
-        console.log(titleText);
-
-        var matchedAnimal = animalsData.find(animal => animal.name === titleText);
-      if (matchedAnimal) {
-                 // Mengambil teks dari elemen p yang merupakan saudara dari h3
-        var detailText = element.nextElementSibling.textContent || element.nextElementSibling.innerText;
-        console.log(detailText);
-        // Mengambil sumber gambar dari img dalam parent yang sama
-        var imgSrc = element.parentNode.parentNode.querySelector('img').src;
-        var imgAlt = element.parentNode.parentNode.querySelector('img').alt;
-        console.log(imgSrc);
-   
-        var popupContent = `
-            <div class="p-4">
-               <img src="${imgSrc}" alt="${imgAlt}" class="w-full h-32 sm:h-48 object-cover">
-               <div class="mt-4">
-                  <h3 class="text-lg font-bold uppercase">${titleText}</h3>
-                  <p class="text-sm">${detailText}</p>
-               </div>
-               <div class="mt-4">
-                  <p class="font-bold uppercase">FAMILY: ${matchedAnimal.famili}</p>
-                  <p class="font-bold uppercase">GENUS: ${matchedAnimal.genus}</p>
-                  <p class="font-bold uppercase">POPULATION: ${matchedAnimal.sisa_populasi}</p>
-               </div>
-               <div class="mt-2">
-                  <p class="text-sm">${matchedAnimal.deskripsi}</p>
-               </div>
-            </div>
-            `;
-
-
-        
-
-          // Menampilkan teks dan gambar di dalam popup
-          document.getElementById('popup-text').innerHTML = popupContent;
-
-          // Menampilkan popup
-          document.getElementById('popup').style.display = 'block';
-      } else {
-          // Tampilkan pesan error atau isi default jika tidak ada kecocokan
-          document.getElementById('popup-text').innerHTML = "<p>Informasi tidak tersedia.</p>";
-          document.getElementById('popup').style.display = 'block';
-      }
-
-
-        // Menampilkan teks dan gambar di dalam popup
-        document.getElementById('popup-text').innerHTML = popupContent;
-
-        // Menampilkan popup
-        document.getElementById('popup').style.display = 'block';
-    }
-
-    function closePopup() {
-        // Menutup popup
-        document.getElementById('popup').style.display = 'none';
-    }
-</script>
-
-<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
-<script src="https://unpkg.com/georaster"></script>
-<script src="https://unpkg.com/georaster-layer-for-leaflet"></script>
-<script>
-  // initialize leaflet map
-  var map = L.map('map').setView([0, 0], 5);
-
-  // add OpenStreetMap basemap
-  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(map);
-
-  var url_to_geotiff_file = "NORMNDVI2010.tif";
-
-  fetch(url_to_geotiff_file)
-    .then(response => response.arrayBuffer())
-    .then(arrayBuffer => {
-      parseGeoraster(arrayBuffer).then(georaster => {
-        console.log("georaster:", georaster);
-
-        /*
-            GeoRasterLayer is an extension of GridLayer,
-            which means can use GridLayer options like opacity.
-
-            Just make sure to include the georaster option!
-
-            http://leafletjs.com/reference-1.2.0.html#gridlayer
-        */
-   // Example of defining the custom raster layer with no-data handling and red gradient
-   const layer = new GeoRasterLayer({
-  georaster: georaster,
-  opacity: 0.7, // Adjust transparency as needed
-  
-  // Function to map raster pixel values to colors
-  pixelValuesToColorFn: function (values) {
-    // Log the values for debugging purposes
-    console.log('Raster pixel values:', values);
-
-    // Assuming a single band raster, fetch the first value
-    const value = values[0];
-
-    // Handle no-data value (assumed to be 0)
-    if (value === 0) {
-      return null; // Make the pixel transparent for no-data values
-    }
-
-    // Normalize the values to create a gradient from dark to bright red
-    const minVal = 0; // Replace with your dataset's known minimum value
-    const maxVal = 1; // Replace with your dataset's known maximum value
-
-    // Avoid division by zero if min and max values are the same
-    const normalizedValue = (value - minVal) / (maxVal - minVal || 1);
-
-    // Scale the normalized value to a range of 0 to 255
-    const redValue = Math.floor(normalizedValue * 255);
-
-    // Return the color as a string
-    const color = `rgb(${redValue}, 0, 0)`;
-    return color;
-  }
-});
-
-layer.addTo(map);
-
-
-
-        map.fitBounds(layer.getBounds());
-
-    });
-  });
-
-</script>
-
-</html>
-
-
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-crossorigin=""></script>
-
-<script>
-   var map = L.map('map').setView([-6.87, 108], 13);
-
-   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-   }).addTo(map);
-</script>
+}).addTo(map);
+
+var url_to_geotiff_file = "ProdukDustinR.tif";
+var currentLayer = null; // Variable to store the current layer
+
+fetchAndRenderGeoTIFF(url_to_geotiff_file);
+
+// Define the fetch and render function
+function fetchAndRenderGeoTIFF(url) {
+    fetch(url)
+        .then(response => response.arrayBuffer())
+        .then(arrayBuffer => {
+            parseGeoraster(arrayBuffer).then(georaster => {
+                console.log("georaster:", georaster);
+
+                const layer = new GeoRasterLayer({
+                    georaster: georaster,
+                    opacity: 0.8, // Adjust transparency as needed
+
+                    // Function to map raster pixel values to colors
+                    pixelValuesToColorFn: function (values) {
+                        // Log the values for debugging purposes
+                        console.log('Raster pixel values:', values);
+
+                        // Assuming a single band raster, fetch the first value
+                        const value = values[0];
+
+                        // Handle no-data value (assumed to be 0)
+                        if (value === 0) {
+                            return null; // Make the pixel transparent for no-data values
+                        }
+
+                        // Normalize the values to create a gradient from dark to bright red
+                        const minVal = 0; // Replace with your dataset's known minimum value
+                        const maxVal = 1; // Replace with your dataset's known maximum value
+
+                        // Avoid division by zero if min and max values are the same
+                        const normalizedValue = (value - minVal) / (maxVal - minVal || 1);
+
+                        // Scale the normalized value to a range of 0 to 255
+                        const redValue = Math.floor(normalizedValue * 255);
+
+                        // Return the color as a string
+                        const color = `rgb(${redValue}, 0, 0)`;
+                        return color;
+                    }
+                });
+
+                // Remove the existing layer if it exists
+                if (currentLayer) {
+                    map.removeLayer(currentLayer);
+                }
+
+                // Add the new layer to the map
+                layer.addTo(map);
+                currentLayer = layer;
+
+                // Fit the map to the new layer's bounds
+                map.fitBounds(layer.getBounds());
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching or parsing GeoTIFF:', error);
+            // Ensure the currentLayer is set to null if there is an error
+            currentLayer = null;
+        });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    let selectedTab = '';
+
+    const tabButtons = document.querySelectorAll('button[role="tab"]');
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            selectedTab = this.id;
+            console.log(`Selected tab ID: ${selectedTab}`);
+            if (selectedTab === "itensitas-kekeringan") {
+                url_to_geotiff_file = "ProdukDustinR.tif";
+                fetchAndRenderGeoTIFF(url_to_geotiff_file);
+            } else if (selectedTab === "ekosistem-karbon") {
+                url_to_geotiff_file = "NORMNDVI2010.tif";
+                fetchAndRenderGeoTIFF(url_to_geotiff_file);
+            } else if (selectedTab === "habitat") {
+                url_to_geotiff_file = "ProdukDustinR.tif";
+                fetchAndRenderGeoTIFF(url_to_geotiff_file);
+            } else if (selectedTab === "antropologis") {
+                url_to_geotiff_file = "HPI_2030_2.tif";
+                fetchAndRenderGeoTIFF(url_to_geotiff_file);
+            }
+            console.log(url_to_geotiff_file);
+        });
+    });
+});
+
+   </script>
+</html>
