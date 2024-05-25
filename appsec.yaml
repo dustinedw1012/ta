@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/bitnami/your-app-directory
+    destination: /opt/bitnami/projects/ta
 
 hooks:
   BeforeInstall:
