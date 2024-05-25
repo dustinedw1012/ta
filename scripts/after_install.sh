@@ -9,11 +9,14 @@ echo "node location: $(which node)"
 
 echo "Current PATH: $PATH"
 
+sudo chown -R bitnami:bitnami /opt/bitnami/projects/ta/
+sudo chown -R bitnami:bitnami /opt/bitnami/node/lib/node_modules/
+
 cd /opt/bitnami/projects/ta
 
 npm --version
 
 # Install dependencies
-npm install
-npm i express path fs
-npm install pm2@latest -g
+sudo npm install
+sudo npm i express path fs
+sudo npm install pm2@latest -g
