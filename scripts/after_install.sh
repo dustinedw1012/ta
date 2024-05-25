@@ -2,7 +2,7 @@
 
 cd /opt/bitnami/projects/ta
 
-export PATH=$PATH:/usr/local/bin:/usr/bin:/bin
+export PATH=$PATH:/opt/bitnami/node/bin
 
 echo "npm location: $(which npm)"
 echo "node location: $(which node)"
