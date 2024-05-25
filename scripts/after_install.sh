@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Navigate to the application directory
-cd /home/bitnami/your-app-directory
+cd /opt/bitnami/projects/ta
 
 # Install dependencies
 npm install
