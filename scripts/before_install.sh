@@ -2,7 +2,7 @@
 
 echo "Preparing for installation..."
 
-find /opt/bitnami/projects/ta/ -name '.DS_Store' -type f -delete
 sudo systemctl stop bitnami.service
+sudo rm -rf /opt/bitnami/projects/ta/*
 
 echo "before_install.sh script completed."
