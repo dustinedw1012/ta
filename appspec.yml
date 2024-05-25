@@ -1,0 +1,16 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /opt/bitnami/projects/ta
+
+hooks:
+  BeforeInstall:
+    - location: scripts/before_install.sh
+      runas: bitnami
+  AfterInstall:
+    - location: scripts/after_install.sh
+      runas: bitnami
+  ApplicationStart:
+    - location: scripts/start_server.sh
+      runas: bitnami
