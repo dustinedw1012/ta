@@ -3,7 +3,7 @@ os: linux
 files:
   - source: /
     destination: /opt/bitnami/projects/ta
-
+    overwrite: true
 hooks:
   BeforeInstall:
     - location: scripts/before_install.sh
