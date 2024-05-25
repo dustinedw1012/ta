@@ -1,5 +1,11 @@
 #!/bin/bash
 
+export PATH=$PATH:/opt/bitnami/node/bin
+
+echo "pm2 location: $(which pm2)"
+
+echo "Current PATH: $PATH"
+
 cd /opt/bitnami/projects/ta
 
 pm2 start index.js --name sato-jabar
