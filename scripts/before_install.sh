@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo "Preparing for installation..." | tee -a /opt/bitnami/projects/ta/logs/before_install.log
+echo "Preparing for installation..."
 
-sudo systemctl stop pm2-bitnami.service
+sudo systemctl stop bitnami.service
 
-echo "before_install.sh script completed." | tee -a /opt/bitnami/projects/ta/logs/before_install.log
+echo "before_install.sh script completed."
