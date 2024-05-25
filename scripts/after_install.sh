@@ -1,7 +1,17 @@
 #!/bin/bash
 
-# Navigate to the application directory
 cd /opt/bitnami/projects/ta
+
+export PATH=$PATH:/usr/local/bin:/usr/bin:/bin
+
+echo "npm location: $(which npm)"
+echo "node location: $(which node)"
+
+echo "Current PATH: $PATH"
+
+cd /opt/bitnami/projects/ta
+
+npm --version
 
 # Install dependencies
 npm install
