@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# Start the application server
-echo "Starting the application server..."
-sudo systemctl start your_application_service
-
-echo "start_server.sh script completed."
+echo "Starting the application server..." | tee -a /opt/bitnami/projects/ta/logs/start_server.log
+sudo systemctl start pm2-bitnami.service || { echo 'Failed to start my-node-app' | tee -a /opt/bitnami/projects/ta/logs/start_server.log; exit 1; }
+echo "Application started." | tee -a /opt/bitnami/projects/ta/logs/start_server.log
