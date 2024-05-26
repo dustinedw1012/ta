@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
 app.get('/map', (req, res) => {
 
   // Mengirim data ke EJS
-  res.render('map.ejs');
+  res.render('Map.ejs');
 
 });
 
