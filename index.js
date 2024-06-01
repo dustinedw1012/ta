@@ -7,11 +7,9 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 
 // Middleware untuk menyajikan file statis
-app.use(express.static('public'));
 app.use(express.static(path.join(__dirname, 'src')));
-
-// Serve static files from the 'src' directory
 app.use('/src', express.static(path.join(__dirname, 'src')));
+app.use(express.static(path.join(__dirname, 'data')));
 
 // Route ke index.html
 app.get('/', (req, res) => {
@@ -32,9 +30,8 @@ app.get('/', (req, res) => {
 });
 
 app.get('/map', (req, res) => {
-
   // Mengirim data ke EJS
-  res.render('Map.ejs');
+  res.render('map-page.ejs');
 
 });
 
